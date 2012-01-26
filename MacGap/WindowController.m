@@ -18,8 +18,9 @@
     self.url = [NSURL URLWithString:relativeURL relativeToURL:[[NSBundle mainBundle] resourceURL]];
     
     [self.window setFrame: frame display: YES];
+    [self.window center];
     [self notificationCenter];
-
+    
     return self;
 }
 

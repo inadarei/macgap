@@ -30,10 +30,17 @@
     NSRect frame = NSMakeRect(0, 0, 800, 600);
     self.windowController = [[WindowController alloc] initWithURL: kStartPage
                                                          andFrame:frame];
+    //Autosave window position
+    [[[self.windowController window] windowController] setShouldCascadeWindows:NO];
+    [[self.windowController window] setFrameAutosaveName:@"MainWindow"];
+    
     [self.windowController showWindow: [NSApplication sharedApplication].delegate];
     self.windowController.contentView.webView.alphaValue = 1.0;
     self.windowController.contentView.alphaValue = 1.0;
+
     [self.windowController showWindow:self];
+    
+
 
 }
 
